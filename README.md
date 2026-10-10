@@ -332,28 +332,28 @@ The application was tested manually through the menus. The main checks are:
 
 | | |
 |---|---|
-| **Student Name:** | Vinod [Surname] |
+| **Student Name:** | Vinod |
 | **Student ID:** | 23DA2-0464 |
 | **Assigned Responsibility:** | Array and Searching implementation |
 | **Individual Contribution:** | - Implemented the `DynamicArray` class (insert, append, delete, display, sort, random fill, automatic resizing)<br>- Implemented `SearchAlgorithms` (Linear Search and Binary Search, recording steps and execution time)<br>- Implemented the Array and Searching menus, including the sorted-array check before binary search<br>- Tested the array and searching functionality and validated inputs |
 
 | | |
 |---|---|
-| **Student Name:** | Haritha [Surname] |
+| **Student Name:** | Haritha |
 | **Student ID:** | 23DA2-0421 |
 | **Assigned Responsibility:** | Stack and Queue implementation |
 | **Individual Contribution:** | - Implemented the `ArrayStack` class (push, pop, peek, display, underflow handling)<br>- Implemented the `CircularQueue` class (enqueue, dequeue, peek, display, underflow handling, resizing)<br>- Implemented the Stack and Queue menus<br>- Tested empty-structure and invalid-input cases |
 
 | | |
 |---|---|
-| **Student Name:** | Hasindu [Surname] |
+| **Student Name:** | Hasindu |
 | **Student ID:** | 23DA2-0150 |
 | **Assigned Responsibility:** | Linked List implementation and Performance Comparison |
 | **Individual Contribution:** | - Implemented the `SinglyLinkedList` class (insert at head/tail/position, delete, search, reverse, display)<br>- Implemented `PerformanceAnalyzer` (search comparison, BFS vs DFS, array vs linked list insertion, complexity explanation)<br>- Implemented `ResultLog` for the "Display All Results" option<br>- Tested the linked list and the performance results |
 
 | | |
 |---|---|
-| **Student Name:** | Prabhath [Surname] |
+| **Student Name:** | Prabhath |
 | **Student ID:** | 23DA2-0414 |
 | **Assigned Responsibility:** | Graph implementation and traversal; Main menu, integration and testing |
 | **Individual Contribution:** | - Implemented the `Graph` class (adjacency list, add vertex, add edge, display)<br>- Implemented BFS traversal, DFS traversal and shortest-path search<br>- Implemented `Main` (main menu and all submenus) and `InputHelper` (input validation)<br>- Integrated all modules into the main application and performed end-to-end testing |
