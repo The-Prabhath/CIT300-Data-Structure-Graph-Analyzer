@@ -1,121 +1,90 @@
+<div align="center">
+
 # Data Structure & Graph Performance Analyzer
 
-**Module:** CIT300 – Data Structures and Algorithms
-**Assessment:** Graded Practical Assignment 2 (10% of final grade)
-**Institution:** Sri Lanka Technology Campus (SLTC)
-**Language / Type:** Java, console-based application
+**A Java console application that implements core data structures and algorithms, and measures their performance.**
+
+![Java](https://img.shields.io/badge/Java-11%2B-orange?logo=openjdk&logoColor=white)
+![Type](https://img.shields.io/badge/Type-Console%20Application-blue)
+![Module](https://img.shields.io/badge/Module-CIT300-informational)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+
+CIT300 Data Structures and Algorithms &nbsp;|&nbsp; Graded Practical Assignment 2 &nbsp;|&nbsp; Sri Lanka Technology Campus (SLTC)
+
+</div>
 
 ---
 
-## 1. Project Description
+## Table of Contents
 
-This project is a single Java console application that lets a user work with the core data structures from
-the course (**Array, Stack, Queue, Linked List, Graph**) and the main algorithms (**Linear Search, Binary
-Search, BFS, DFS**).
+1. [Overview](#1-overview)
+2. [Features](#2-features)
+3. [Demo](#3-demo)
+4. [Architecture](#4-architecture)
+5. [Complexity Summary](#5-complexity-summary)
+6. [Project Structure](#6-project-structure)
+7. [Getting Started](#7-getting-started)
+8. [Usage Guide](#8-usage-guide)
+9. [Design Decisions](#9-design-decisions)
+10. [Testing](#10-testing)
+11. [Team and Contributions](#11-team-and-contributions)
+12. [Collaboration Workflow](#12-collaboration-workflow)
+13. [Limitations and Future Improvements](#13-limitations-and-future-improvements)
 
-It also **measures and compares** these approaches by counting the number of steps and the execution time. For
-example, it shows that finding the last item among 100,000 takes 100,000 steps with Linear Search but only
-about 17 steps with Binary Search. This demonstrates **algorithmic complexity (Big-O)** in practice.
+---
 
-### What the project demonstrates
-- Correct implementation of data structures
-- Appropriate use of algorithms (searching and graph traversal)
+## 1. Overview
+
+This project is a single integrated, menu-driven Java console application. It lets a user work with the main
+data structures from the course (**Array, Stack, Queue, Linked List, Graph**) and the main algorithms
+(**Linear Search, Binary Search, BFS, DFS**).
+
+Its second purpose is **measurement**. Every search, traversal and performance run records the **number of
+steps** and the **execution time**, so the results can be explained with algorithmic complexity (Big-O).
+For example, finding the last of 100,000 items takes 100,000 steps with Linear Search, but only 17 steps with
+Binary Search.
+
+**Repository:** `<paste GitHub repository link here>`
+
+### Learning outcomes demonstrated
+
+- Correct implementation of the Array, Stack, Queue and Linked List from scratch. The Graph uses Java
+  collections (`Map`, `List`, `Deque`) for its adjacency list and traversal helpers.
+- Appropriate use of algorithms for searching and graph traversal
 - Graph representation and operations
-- Performance / operation comparison
-- Input validation and handling of empty structures
-- Object-oriented design (one class per component)
-- GitHub-based collaboration and individual contribution
+- Performance and operation comparison using steps and time
+- Input validation and safe handling of empty structures
+- Object-oriented design with one class per component
+- Collaborative development using GitHub
 
 ---
 
-## 2. Team Members
+## 2. Features
 
-
-
-| | |
+| Component | What you can do |
 |---|---|
-| **Student Name:** | Vinod|
-| **Student ID:** | `23DA2-0464` |
-| **Assigned Responsibility:** | Array and Searching implementation |
-| **Individual Contribution:** | - Implemented `DynamicArray` (insert, append, delete, display, sort, random fill)<br>- Implemented `SearchAlgorithms` (Linear Search and Binary Search with steps and time)<br>- Implemented the Array and Searching menus (sorted-array check before binary search)<br>- Tested and validated inputs for these modules |
+| **Array** | Insert at index, append, delete at index, display, sort, fill with random numbers. Resizes automatically. |
+| **Stack** | Push, pop, peek, display. Safe handling of stack underflow. |
+| **Queue** | Enqueue, dequeue, peek (front), display. Circular array. Safe handling of queue underflow. |
+| **Linked List** | Insert at head, tail or position; delete by value; search; reverse; display. |
+| **Searching** | Linear search, binary search (sorted-array check with a sort prompt), and a side-by-side comparison. |
+| **Graph** | Add vertex, add edge, display adjacency list, BFS, DFS, shortest-path search, load a sample graph. |
+| **Performance Comparison** | One table comparing search algorithms, graph traversals and array-vs-list insertion, followed by an explanation. |
+| **Display All Results** | Lists every search, traversal and performance result recorded in the session. |
 
-| | |
-|---|---|
-| **Student Name:** | Haritha|
-| **Student ID:** | `23DA2-0421` |
-| **Assigned Responsibility:** | Stack and Queue implementation |
-| **Individual Contribution:** | - Implemented `ArrayStack` (push, pop, peek, display, underflow handling)<br>- Implemented `CircularQueue` (enqueue, dequeue, peek, display, underflow handling)<br>- Implemented the Stack and Queue menus<br>- Tested empty-structure and invalid-input cases |
+### Robust input handling
 
-| | |
-|---|---|
-| **Student Name:** | Hasindu|
-| **Student ID:** | `23DA2-0150` |
-| **Assigned Responsibility:** | Linked List implementation and Performance Comparison |
-| **Individual Contribution:** | - Implemented `SinglyLinkedList` (insert at head/tail/position, delete, search, reverse, display)<br>- Implemented `PerformanceAnalyzer` (search, traversal and array-vs-list comparison table)<br>- Implemented `ResultLog` ("Display All Results")<br>- Wrote the complexity explanations shown by the program |
-
-| | |
-|---|---|
-| **Student Name:** | Prabhath|
-| **Student ID:** | `23DA2-0414` |
-| **Assigned Responsibility:** | Graph implementation and traversal; Main menu, integration and testing |
-| **Individual Contribution:** | - Implemented `Graph` (adjacency list, add vertex/edge, display)<br>- Implemented BFS, DFS and shortest-path search<br>- Implemented `Main` (main menu and all submenus) and `InputHelper` (input validation)<br>- Integrated all modules and performed end-to-end testing |
+- Letters, symbols and out-of-range numbers are rejected and the prompt repeats.
+- Pop, peek, dequeue and delete on an empty structure show a clear message and never crash.
+- Invalid array indexes and list positions are rejected.
+- Graph rejects duplicate vertices, duplicate edges, self-loops and unknown vertices.
 
 ---
 
-## 3. Technologies Used
-
-- Java 11 or newer (tested on Java 21)
-- Plain console input/output (`Scanner`)
-- Git and GitHub for version control and collaboration
-
----
-
-## 4. Main System Features
-
-| Component | Operations | Complexity |
-|---|---|---|
-| **Array** | insert, append, delete, search, display, random fill | insert/delete O(n), access O(1) |
-| **Stack** | push, pop, peek, display, underflow handling | all O(1) |
-| **Queue** (circular) | enqueue, dequeue, peek, display, underflow handling | all O(1) |
-| **Linked List** | insert head/tail/position, delete, search, reverse, display | head insert O(1), search O(n) |
-| **Searching** | linear, binary (with auto-sort prompt), side-by-side comparison | O(n) vs O(log n) |
-| **Graph** | add vertex/edge, display, BFS, DFS, path search, sample graph | traversals O(V + E) |
-| **Performance** | steps and time table for search, traversal, array vs list | – |
-| **Results log** | records every search, traversal and performance result | – |
-
-All input is validated: non-numeric values, out-of-range numbers, duplicate vertices, missing vertices,
-self-loops, and operations on empty structures all give friendly messages instead of crashing.
-
----
-
-## 5. How the Program Works
-
-### Structure
-
-```
-                         Main.java
-              (main menu, loops until option 9)
-                             |
-   +--------+--------+-------+-------+--------+-------------+
-   |        |        |       |       |        |             |
- Array    Stack    Queue   Linked  Searching Graph    Performance
- menu     menu     menu    List    menu      menu     Comparison
-   |        |        |     menu       |        |             |
-DynamicArray ArrayStack CircularQueue SinglyLinkedList  SearchAlgorithms  Graph  PerformanceAnalyzer
-                                                                                        |
-                              InputHelper (all input)            ResultLog (all results)
-```
-
-### Key ideas
-1. **`Main` creates one object of each data structure at startup.** The data stays in memory while the user
-   moves between menus.
-2. **All user input goes through `InputHelper`**, which keeps asking until the input is valid.
-3. **Searches, traversals and performance results are saved in `ResultLog`.** Menu option 8 prints them all.
-4. **"Steps" is the main measure.** It counts comparisons or visits. Time (in microseconds) changes from run
-   to run, but step counts do not, so steps are the reliable way to compare algorithms.
-5. **Searching works on the array from the Array menu.** Fill the array first, then use the Searching menu.
+## 3. Demo
 
 ### Main menu
+
 ```
 =============================================
  DATA STRUCTURE & GRAPH ANALYZER
@@ -129,7 +98,112 @@ DynamicArray ArrayStack CircularQueue SinglyLinkedList  SearchAlgorithms  Graph 
 7. Performance Comparison
 8. Display All Results
 9. Exit
+Enter your choice:
 ```
+
+### Graph operations on the built-in sample graph
+
+```
+Adjacency List (7 vertices, 7 edges):
+  A -> B, C
+  B -> A, D, E
+  C -> A, F
+  D -> B
+  E -> B, F
+  F -> C, E, G
+  G -> F
+
+BFS from A: A -> B -> C -> D -> E -> F -> G | steps: 21
+DFS from A: A -> B -> D -> E -> F -> C -> G | steps: 21
+Shortest path (3 edges): A -> C -> F -> G
+```
+
+### Performance comparison (n = 100,000)
+
+```
+=============================================
+ PERFORMANCE COMPARISON  (n = 100000)
+=============================================
+Operation          Algorithm                       Steps      Time (us)
+-------------------------------------------------------------------------
+Search (worst)     Linear Search                  100000        5841.03
+Search (worst)     Binary Search                      17           4.66
+Search (avg x100)  Linear Search                   49501         175.95
+Search (avg x100)  Binary Search                      15           1.51
+Traversal V=5000   BFS                             25000       18681.02
+Traversal V=5000   DFS                             25000       19575.91
+Insert front x20000 Array (shifting)            200010000       86052.85
+Insert front x20000 Linked List (head)              20000        2626.81
+-------------------------------------------------------------------------
+```
+
+> Step counts are deterministic. Times vary between machines and runs, so **steps are the reliable
+> measure** when comparing algorithms.
+
+### Why the results differ
+
+| Comparison | Explanation |
+|---|---|
+| Linear vs Binary Search | Linear checks items one by one, O(n). Binary halves the range each step, O(log n), but needs sorted data. |
+| BFS vs DFS | Both visit each vertex and edge once, so both are O(V + E) and the step counts match. Only the visiting order differs (queue vs stack). |
+| Array vs Linked List front insert | An array shifts every element, so n inserts cost O(n^2) in total. A linked list only moves the head, so n inserts cost O(n). |
+
+---
+
+## 4. Architecture
+
+`Main` owns one instance of each data structure and routes every menu choice to the right component. All
+input goes through `InputHelper`, and every result is written to `ResultLog`.
+
+```mermaid
+flowchart TD
+    Main["Main<br/>menus and integration"]
+    Input["InputHelper<br/>validated input"]
+    Log["ResultLog<br/>all results"]
+
+    Main --> Arr["DynamicArray"]
+    Main --> Stk["ArrayStack"]
+    Main --> Que["CircularQueue"]
+    Main --> Lst["SinglyLinkedList"]
+    Main --> Srch["SearchAlgorithms"]
+    Main --> Grph["Graph<br/>BFS, DFS, path search"]
+    Main --> Perf["PerformanceAnalyzer"]
+
+    Srch -. searches .-> Arr
+    Perf --> Srch
+    Perf --> Grph
+    Perf --> Arr
+    Perf --> Lst
+
+    Main --> Input
+    Perf --> Input
+    Main --> Log
+    Perf --> Log
+```
+
+### Key design points
+
+- **One object per structure** is created in `Main`, so data persists while the user moves between menus.
+- **Searching works on the array** from the Array menu: fill it first, then search it.
+- **A shared `SearchResult` type** (index, steps, time) is used by linear search, binary search and the
+  linked-list search so results are reported the same way.
+
+---
+
+## 5. Complexity Summary
+
+| Structure / Algorithm | Operation | Time complexity |
+|---|---|---|
+| Array | Access by index | O(1) |
+| Array | Insert / delete (shifting) | O(n) |
+| Stack | Push, pop, peek | O(1) |
+| Queue (circular) | Enqueue, dequeue, peek | O(1) |
+| Linked List | Insert at head | O(1) |
+| Linked List | Insert at tail, search, delete by value | O(n) |
+| Linear Search | Search | O(n) |
+| Binary Search | Search (sorted data) | O(log n) |
+| Graph (adjacency list) | Space | O(V + E) |
+| BFS / DFS | Traversal | O(V + E) |
 
 ---
 
@@ -140,159 +214,196 @@ DSGraphAnalyzer/
 ├── README.md
 ├── .gitignore
 ├── docs/
-│   ├── GIT_WORKFLOW.md          Git / GitHub steps for the team
-│   └── VIDEO_GUIDE.md           What to say and show in the video
+│   ├── GIT_WORKFLOW.md          Git and GitHub workflow for the team
+│   └── VIDEO_GUIDE.md           Notes for the demonstration video
 └── src/
-    ├── Main.java                Prabhath   – main menu, submenus, integration
-    ├── InputHelper.java         Prabhath   – validated console input
-    ├── Graph.java               Prabhath   – graph, BFS, DFS, path search
-    ├── DynamicArray.java        Vinod      – array component
-    ├── SearchAlgorithms.java    Vinod      – linear and binary search
-    ├── ArrayStack.java          Haritha    – stack
-    ├── CircularQueue.java       Haritha    – queue
-    ├── SinglyLinkedList.java    Hasindu    – linked list
-    ├── PerformanceAnalyzer.java Hasindu    – performance comparison
-    └── ResultLog.java           Hasindu    – "Display All Results"
+    ├── Main.java                Main menu, submenus, integration
+    ├── InputHelper.java         Validated console input
+    ├── Graph.java               Adjacency list graph, BFS, DFS, path search
+    ├── DynamicArray.java        Resizable array
+    ├── SearchAlgorithms.java    Linear and binary search
+    ├── ArrayStack.java          Array-based stack
+    ├── CircularQueue.java       Circular array queue
+    ├── SinglyLinkedList.java    Singly linked list
+    ├── PerformanceAnalyzer.java Performance comparison
+    └── ResultLog.java           Session result log
 ```
 
 ---
 
-## 7. Concepts in Simple Words
+## 7. Getting Started
 
-**Big-O (complexity):** how the number of steps grows as the data grows.
-O(1) is constant, O(log n) is very fast, O(n) grows in proportion to the data, and O(n²) gets slow quickly.
+### Prerequisites
 
-| Concept | Idea | Cost |
-|---|---|---|
-| **Array** | Items in numbered slots. Inserting or deleting in the middle shifts everything after it. | insert/delete O(n) |
-| **Stack** | Last In, First Out (a pile of plates). Only the top is touched. | O(1) |
-| **Queue** | First In, First Out (a ticket line). Our version is circular: it uses `% length` to wrap around and reuse space. | O(1) |
-| **Linked List** | Nodes that each hold a value and a pointer to the next node. No shifting needed. | head insert O(1), search O(n) |
-| **Linear Search** | Check items one by one. | O(n) |
-| **Binary Search** | Look at the middle item and discard half each time. **The data must be sorted.** | O(log n) |
-| **Graph** | Vertices (nodes) joined by edges. We use an *adjacency list*: each vertex stores a list of its neighbours. | space O(V + E) |
-| **BFS** | Visits the graph level by level using a **queue**. Finds the shortest path (fewest edges). | O(V + E) |
-| **DFS** | Goes as deep as possible first using a **stack**, then backs up. | O(V + E) |
+- **JDK 11 or newer** (tested on JDK 21)
 
----
+```
+java -version
+javac -version
+```
 
-## 8. What Each Member Must Understand and Explain
+Both commands must print a version. If `javac` is not found, install a JDK (not just a JRE).
 
-### Vinod – Array and Searching
-- Why array insert and delete are O(n): later elements have to shift.
-- How binary search works, and why the array must be sorted.
-- What `mid = lo + (hi - lo) / 2` does.
-- Why linear search needs up to n steps and binary search about log₂ n.
-
-### Haritha – Stack and Queue
-- The difference between LIFO (stack) and FIFO (queue).
-- How `top` works in the stack (`data[++top] = value`, `data[top--]`).
-- Why the queue is circular, and how `(front + size) % data.length` works.
-- How underflow (pop/dequeue on empty) is detected and handled.
-
-### Hasindu – Linked List and Performance
-- How a node and `head` work, and how insert, delete and reverse change the pointers.
-- Why insert at head is O(1) but search is O(n).
-- How the performance table is produced, and why results differ:
-  - Linear vs Binary Search: O(n) vs O(log n).
-  - BFS vs DFS: both O(V + E), so step counts are nearly equal; only the visiting order differs.
-  - Array vs Linked List front insertion: O(n²) total vs O(n) total.
-  - Why time varies between runs but steps do not.
-
-### Prabhath – Graph, Main and Integration
-- Adjacency list vs adjacency matrix, and why the adjacency list suits sparse graphs.
-- How BFS (queue) and DFS (stack) work, and why a `visited` set is needed (to avoid infinite loops).
-- Why BFS finds the shortest path.
-- How `Main` connects all modules, and how `InputHelper` validates input.
-
----
-
-## 9. How to Run
-
-You need a **JDK** (11 or newer). Check with `java -version` and `javac -version`.
+### Build and run
 
 **Windows**
+
 ```
-cd DSGraphAnalyzer
+git clone <repository-url>
+cd <repository-folder>
 mkdir out
 javac -d out src\*.java
 java -cp out Main
 ```
 
 **Linux / macOS**
+
 ```
-cd DSGraphAnalyzer
+git clone <repository-url>
+cd <repository-folder>
 mkdir -p out
 javac -d out src/*.java
 java -cp out Main
 ```
 
-You can also open the folder in IntelliJ IDEA, Eclipse or VS Code and run `Main.java`.
+The project can also be opened in **IntelliJ IDEA**, **Eclipse** or **VS Code**. Run `Main.java`.
 
 ---
 
-## 10. Quick Demo Path
+## 8. Usage Guide
 
-1. **Searching:** Array Operations → option 6 (fill 20000 random numbers) → return → Searching → option 3
-   (compare). Say `1` to sort when asked. Linear takes thousands of steps, binary takes about 15.
-2. **Stack and Queue:** push 1, 2, 3 then pop (you get 3). Enqueue 1, 2, 3 then dequeue (you get 1). Then try
-   pop and dequeue on an empty structure.
-3. **Linked List:** insert at head, tail and position, display, search, delete, reverse.
-4. **Graph:** Graph Operations → option 7 (sample) → 3 (display) → 4 (BFS from `A`) → 5 (DFS from `A`) →
-   6 (path from `A` to `G`).
-5. **Performance Comparison:** main menu → 7 → enter `100000`.
-6. **Display All Results:** main menu → 8.
-
-### Expected sample results
-| Test | Expected output |
+| Goal | Steps |
 |---|---|
-| BFS from `A` (sample graph) | `A -> B -> C -> D -> E -> F -> G` |
-| DFS from `A` (sample graph) | `A -> B -> D -> E -> F -> C -> G` |
-| Path `A` to `G` | `A -> C -> F -> G` (3 edges) |
-| Performance, n = 100000: linear worst case | 100000 steps |
-| Performance, n = 100000: binary worst case | about 17 steps |
-| Performance, n = 100000: BFS vs DFS | equal step counts |
-| Performance, n = 100000: array front-insert vs list | about 200 million steps vs 20000 |
+| Compare linear and binary search | Array Operations, option 6 (fill 20000 random numbers). Then Searching Operations, option 3 (compare), search for `5000`, and answer `1` when asked to sort. |
+| See stack (LIFO) behaviour | Stack Operations: push 10, 20, 30, then pop. You get 30. |
+| See queue (FIFO) behaviour | Queue Operations: enqueue 10, 20, 30, then dequeue. You get 10. |
+| Explore the linked list | Linked List Operations: insert at head and tail, display, search, delete, reverse. |
+| Traverse a graph | Graph Operations, option 7 (load sample), then option 4 (BFS) or 5 (DFS) with start vertex `A`. |
+| Find a shortest path | Graph Operations, option 6, from `A` to `G`. |
+| Run the full comparison | Main menu, option 7, enter `100000`. |
+| Review everything | Main menu, option 8. |
 
 ---
 
-## 11. GitHub Workflow Summary
+## 9. Design Decisions
 
-| Member | Branch | Files |
+| Decision | Reason |
+|---|---|
+| **Circular array queue** | Enqueue and dequeue stay O(1) and freed slots are reused. A plain array would shift elements on every dequeue, which is O(n). |
+| **Adjacency list for the graph** | Uses O(V + E) space, which suits sparse graphs better than the O(V^2) space of an adjacency matrix. |
+| **Iterative DFS with an explicit stack** | Avoids a `StackOverflowError` on large graphs, which a recursive DFS could cause in the performance tests. |
+| **BFS for shortest path** | In an unweighted graph BFS finds the path with the fewest edges. |
+| **Steps counted alongside time** | Steps are exact and repeatable. Time depends on the machine, so it is shown but not relied on. |
+| **Sorted-array check before binary search** | Binary search gives wrong answers on unsorted data, so the program warns and offers to sort first. |
+| **Central `InputHelper`** | One place for validation keeps every menu consistent and prevents crashes from bad input. |
+| **Exceptions for invalid operations** | Structures throw clear exceptions (for example on pop from an empty stack). The menus catch them and show a friendly message. |
+
+---
+
+## 10. Testing
+
+The application was tested manually through the menus. The main checks are:
+
+| Area | Test | Expected result |
 |---|---|---|
-| Vinod | `feature/array-searching` | DynamicArray.java, SearchAlgorithms.java |
-| Haritha | `feature/stack-queue` | ArrayStack.java, CircularQueue.java |
-| Hasindu | `feature/linkedlist-performance` | SinglyLinkedList.java, PerformanceAnalyzer.java, ResultLog.java |
-| Prabhath | `feature/graph-main` | Graph.java, Main.java, InputHelper.java |
-
-1. Clone the repo and create **your own branch**.
-2. Commit in **small steps with meaningful messages** (at least 5 each).
-3. Push your branch and open a **Pull Request** to `main`. Use `Closes #<issue number>`.
-4. A teammate **reviews and merges** it.
-5. After the others are merged, Prabhath pulls `main`, tests everything together and merges last.
-
-Full commands are in `docs/GIT_WORKFLOW.md`.
-
----
-
-## 12. Demonstration Video Rules (summary)
-
-- **One merged video, under 15 minutes.**
-- **Every member's face must be clearly visible** during their own section.
-- Each member: introduce yourself (name, ID, responsibility) → explain your contribution → show your code →
-  run and demonstrate → explain the data structure, algorithm and complexity → show how it fits into the
-  complete system.
-
-See `docs/VIDEO_GUIDE.md` for the detailed script.
+| Input | Enter letters at any menu | "Invalid input" message and the prompt repeats |
+| Input | Enter a number outside the menu range | "Value must be between ..." message |
+| Array | Delete from an empty array | "Array is empty" message |
+| Array | Insert at an invalid index | Index range message, no crash |
+| Array | Insert `15` at index 1 of `[10, 30, 20]` | `[10, 15, 30, 20]`, 2 elements shifted |
+| Stack | Pop or peek when empty | Underflow message |
+| Stack | Push 10, 20, 30, then pop | Returns 30 |
+| Queue | Dequeue when empty | Underflow message |
+| Queue | Enqueue 10, 20, 30, then dequeue | Returns 10 |
+| Linked List | Insert, delete, search, reverse | Correct list after each operation |
+| Linked List | Delete a value that does not exist | "Value not found" |
+| Searching | Binary search on an unsorted array | Prompt to sort first |
+| Searching | Search a value that is not present | "NOT FOUND" with steps |
+| Graph | BFS and DFS on an empty graph | "Graph is empty" message |
+| Graph | Add a duplicate vertex, a self-loop or an edge to a missing vertex | Rejected with a clear message |
+| Graph | BFS from `A` on the sample graph | `A -> B -> C -> D -> E -> F -> G` |
+| Graph | DFS from `A` on the sample graph | `A -> B -> D -> E -> F -> C -> G` |
+| Graph | Path `A` to `G` | `A -> C -> F -> G` |
+| Performance | Run with n = 100000 | Linear 100000 steps, binary about 17, BFS equals DFS |
 
 ---
 
-## 13. Final Submission Checklist
+## 11. Team and Contributions
 
-- [ ] Project compiles and runs from a fresh clone
-- [ ] All required components work (Array, Stack, Queue, Linked List, Searching, Graph, Performance)
-- [ ] Real surnames, IDs, responsibilities and contributions are in this README
-- [ ] Every member has commits, a branch and a pull request on GitHub
-- [ ] One merged video prepared, under 15 minutes, faces visible
-- [ ] If using Google Drive: Editor access given to `asanka.r@sltc.ac.lk` and `kaushika.w@sltc.ac.lk`
-- [ ] Submitted through the LMS **before the deadline** (no late emails are accepted)
+| | |
+|---|---|
+| **Student Name:** | Vinod [Surname] |
+| **Student ID:** | 23DA2-0464 |
+| **Assigned Responsibility:** | Array and Searching implementation |
+| **Individual Contribution:** | - Implemented the `DynamicArray` class (insert, append, delete, display, sort, random fill, automatic resizing)<br>- Implemented `SearchAlgorithms` (Linear Search and Binary Search, recording steps and execution time)<br>- Implemented the Array and Searching menus, including the sorted-array check before binary search<br>- Tested the array and searching functionality and validated inputs |
+
+| | |
+|---|---|
+| **Student Name:** | Haritha [Surname] |
+| **Student ID:** | 23DA2-0421 |
+| **Assigned Responsibility:** | Stack and Queue implementation |
+| **Individual Contribution:** | - Implemented the `ArrayStack` class (push, pop, peek, display, underflow handling)<br>- Implemented the `CircularQueue` class (enqueue, dequeue, peek, display, underflow handling, resizing)<br>- Implemented the Stack and Queue menus<br>- Tested empty-structure and invalid-input cases |
+
+| | |
+|---|---|
+| **Student Name:** | Hasindu [Surname] |
+| **Student ID:** | 23DA2-0150 |
+| **Assigned Responsibility:** | Linked List implementation and Performance Comparison |
+| **Individual Contribution:** | - Implemented the `SinglyLinkedList` class (insert at head/tail/position, delete, search, reverse, display)<br>- Implemented `PerformanceAnalyzer` (search comparison, BFS vs DFS, array vs linked list insertion, complexity explanation)<br>- Implemented `ResultLog` for the "Display All Results" option<br>- Tested the linked list and the performance results |
+
+| | |
+|---|---|
+| **Student Name:** | Prabhath [Surname] |
+| **Student ID:** | 23DA2-0414 |
+| **Assigned Responsibility:** | Graph implementation and traversal; Main menu, integration and testing |
+| **Individual Contribution:** | - Implemented the `Graph` class (adjacency list, add vertex, add edge, display)<br>- Implemented BFS traversal, DFS traversal and shortest-path search<br>- Implemented `Main` (main menu and all submenus) and `InputHelper` (input validation)<br>- Integrated all modules into the main application and performed end-to-end testing |
+
+### Code ownership
+
+| Member | Files |
+|---|---|
+| Vinod | `DynamicArray.java`, `SearchAlgorithms.java` |
+| Haritha | `ArrayStack.java`, `CircularQueue.java` |
+| Hasindu | `SinglyLinkedList.java`, `PerformanceAnalyzer.java`, `ResultLog.java` |
+| Prabhath | `Graph.java`, `Main.java`, `InputHelper.java` |
+
+---
+
+## 12. Collaboration Workflow
+
+The project was developed in this repository using a branch-per-member workflow:
+
+1. Each member created a **feature branch** from `main` and worked only on their own files.
+2. Work was saved in **small commits** with meaningful messages.
+3. Each branch was merged into `main` through a **pull request** that another member reviewed.
+4. **Issues** were used to track each member's tasks.
+5. After all modules were merged, the integration lead tested the complete application and fixed any problems.
+
+| Member | Branch |
+|---|---|
+| Vinod | `feature/array-searching` |
+| Haritha | `feature/stack-queue` |
+| Hasindu | `feature/linkedlist-performance` |
+| Prabhath | `feature/graph-main` |
+
+Commit messages describe what changed, for example `Add binary search with step counting` or
+`Handle empty stack on pop`. See [`docs/GIT_WORKFLOW.md`](docs/GIT_WORKFLOW.md) for the full workflow.
+
+---
+
+## 13. Limitations and Future Improvements
+
+**Current limitations**
+
+- The array, stack, queue and linked list store `int` values only.
+- The graph is undirected and unweighted.
+- Data is kept in memory and is lost when the program exits.
+- Tests are manual, driven through the console menus.
+
+**Possible future work**
+
+- Make the structures generic (`<T>`) so they can store any type.
+- Add directed and weighted graphs with Dijkstra's shortest path algorithm.
+- Add more algorithms to the comparison, such as sorting algorithms.
+- Add automated unit tests (JUnit) and a GitHub Actions build.
+- Save and load data from files.
