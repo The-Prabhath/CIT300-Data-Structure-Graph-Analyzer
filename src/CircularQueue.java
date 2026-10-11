@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /** Circular-array FIFO queue (O(1) enqueue / dequeue). (Member 2) */
 public class CircularQueue {
     private int[] data = new int[8];
