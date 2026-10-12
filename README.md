@@ -44,7 +44,9 @@ steps** and the **execution time**, so the results can be explained with algorit
 For example, finding the last of 100,000 items takes 100,000 steps with Linear Search, but only 17 steps with
 Binary Search.
 
-**Repository:** `<paste GitHub repository link here>`
+**Group Number:** 56
+
+**Repository:** [https://github.com/The-Prabhath/CIT300-Data-Structure-Graph-Analyzer](https://github.com/The-Prabhath/CIT300-Data-Structure-Graph-Analyzer)
 
 ### Learning outcomes demonstrated
 
@@ -210,12 +212,9 @@ flowchart TD
 ## 6. Project Structure
 
 ```
-DSGraphAnalyzer/
+CIT300-Data-Structure-Graph-Analyzer/
 ├── README.md
 ├── .gitignore
-├── docs/
-│   ├── GIT_WORKFLOW.md          Git and GitHub workflow for the team
-│   └── VIDEO_GUIDE.md           Notes for the demonstration video
 └── src/
     ├── Main.java                Main menu, submenus, integration
     ├── InputHelper.java         Validated console input
@@ -249,8 +248,8 @@ Both commands must print a version. If `javac` is not found, install a JDK (not 
 **Windows**
 
 ```
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/The-Prabhath/CIT300-Data-Structure-Graph-Analyzer.git
+cd CIT300-Data-Structure-Graph-Analyzer
 mkdir out
 javac -d out src\*.java
 java -cp out Main
@@ -259,8 +258,8 @@ java -cp out Main
 **Linux / macOS**
 
 ```
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/The-Prabhath/CIT300-Data-Structure-Graph-Analyzer.git
+cd CIT300-Data-Structure-Graph-Analyzer
 mkdir -p out
 javac -d out src/*.java
 java -cp out Main
@@ -332,28 +331,28 @@ The application was tested manually through the menus. The main checks are:
 
 | | |
 |---|---|
-| **Student Name:** | Vinod |
+| **Student Name:** | W. Vinod Lashintha |
 | **Student ID:** | 23DA2-0464 |
 | **Assigned Responsibility:** | Array and Searching implementation |
 | **Individual Contribution:** | - Implemented the `DynamicArray` class (insert, append, delete, display, sort, random fill, automatic resizing)<br>- Implemented `SearchAlgorithms` (Linear Search and Binary Search, recording steps and execution time)<br>- Implemented the Array and Searching menus, including the sorted-array check before binary search<br>- Tested the array and searching functionality and validated inputs |
 
 | | |
 |---|---|
-| **Student Name:** | Haritha |
+| **Student Name:** | K. Haritha Gimres |
 | **Student ID:** | 23DA2-0421 |
 | **Assigned Responsibility:** | Stack and Queue implementation |
 | **Individual Contribution:** | - Implemented the `ArrayStack` class (push, pop, peek, display, underflow handling)<br>- Implemented the `CircularQueue` class (enqueue, dequeue, peek, display, underflow handling, resizing)<br>- Implemented the Stack and Queue menus<br>- Tested empty-structure and invalid-input cases |
 
 | | |
 |---|---|
-| **Student Name:** | Hasindu |
+| **Student Name:** | R.M. Hasindu Chamath Dilmina |
 | **Student ID:** | 23DA2-0150 |
 | **Assigned Responsibility:** | Linked List implementation and Performance Comparison |
 | **Individual Contribution:** | - Implemented the `SinglyLinkedList` class (insert at head/tail/position, delete, search, reverse, display)<br>- Implemented `PerformanceAnalyzer` (search comparison, BFS vs DFS, array vs linked list insertion, complexity explanation)<br>- Implemented `ResultLog` for the "Display All Results" option<br>- Tested the linked list and the performance results |
 
 | | |
 |---|---|
-| **Student Name:** | Prabhath |
+| **Student Name:** | S.A. Kavindu Prabhath Samarathunga |
 | **Student ID:** | 23DA2-0414 |
 | **Assigned Responsibility:** | Graph implementation and traversal; Main menu, integration and testing |
 | **Individual Contribution:** | - Implemented the `Graph` class (adjacency list, add vertex, add edge, display)<br>- Implemented BFS traversal, DFS traversal and shortest-path search<br>- Implemented `Main` (main menu and all submenus) and `InputHelper` (input validation)<br>- Integrated all modules into the main application and performed end-to-end testing |
@@ -387,7 +386,7 @@ The project was developed in this repository using a branch-per-member workflow:
 | Prabhath | `feature/graph-main` |
 
 Commit messages describe what changed, for example `Add binary search with step counting` or
-`Handle empty stack on pop`. See [`docs/GIT_WORKFLOW.md`](docs/GIT_WORKFLOW.md) for the full workflow.
+`Handle empty stack on pop`.
 
 ---
 
